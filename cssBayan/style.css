@@ -1,61 +1,119 @@
-.acor-container {
-	margin: 20px 0;
+html, body{
+    background-color: #f6f6eb;
+    width: 100%;
+    height: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3em;
+    color: #285f8f;
+    position: static;
 }
-.acor-container .acor-body {
+.header{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.memeContainer {
+    width: 90%;
+	margin: auto;
+}
+
+.memeBody{
+    display: flex;
+    justify-content: center;
+}
+.memeContainer .memeBody {
 	width: calc(100% - 40px);
 	margin: 0 auto;
 	height: 0;
 	color: rgba(0, 0, 0, 0);
-	background-color: #BFE2FF;
 	line-height: 18px;
 	padding: 0 30px;
 	box-sizing: border-box;
 	transition: color 0.5s, padding 0.5s;
 	overflow: hidden;
-	font-family: Verdana, sans-serif; 
-	font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+	font-size: 4rem;
+    font-weight: 600;
 	box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 10px 16px rgba(0,0,0,0.2);
 }
-.acor-container .acor-body p {
+.memeContainer .memeBody p {
 	margin: 0 0 10px;
 }
-.acor-container label {
+.memeContainer label {
 	cursor: pointer;
-	background-color: #337AB7;
 	display: block;
 	padding: 15px 20px;
 	width: 100%;
 	color: #BFE2FF;
-	font-weight: 300;
+	font-weight: 600;
 	box-sizing: border-box;
 	z-index: 100;
-	font-family: Verdana, sans-serif;   
-	font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+	font-size: 2rem;
 	margin: 0 0 5px;
 	transition: color .35s;
 }
-.acor-container label:hover {
+.memeContainer label:hover {
     color: #FFF;
 }
-.acor-container input{
+.memeContainer input{
 	display: none;
 }
-.acor-container label:before {
-	content: '\276F';
+.memeContainer label:before {
+	content: '\003E';
 	float: right;
 }
-.acor-container input:checked + label {
+.memeContainer input:checked + label {
 	background-color: #285f8f;
     color: #FFF;
 	box-shadow: 0 8px 26px rgba(0,0,0,0.4), 0 28px 30px rgba(0,0,0,0.3);
 }
-.acor-container input:checked + label:before {
-    transition: transform .35s;
+.memeContainer input:checked + label:before {
+    transition: transform .65s;
     transform: rotate(90deg);
 }
-.acor-container input:checked + label + .acor-body {
+.memeContainer input:checked + label + .memeBody {
 	height: auto;
-	margin-top: -5px;
-	color: #000;
-	padding: 20px 30px 10px;
+    width: 100%;
+	transition: all .65s;
+    transform: scale(0.99);
+}
+.memeContainer .memeBody .img {
+    width: 30%;
+    height: 0%;
+}
+/*Adaptivity desktop 1920×1080*/
+/*Adaptivity tablet 820x1180*/
+/*Adaptivity mobile 320x568*/
+
+/*Hover*/
+@media (hover: hover) {
+    .memeContainer label:hover{                       
+        color: #a77171;
+        border: none;
+    }
+
+    .memeContainer label:hover::before {               
+        display: block;
+
+    }
+    .memeContainer label:hover {
+        color: #998aea;
+        cursor: pointer;
+    }
+    .memeContainer label:hover + .memeBody{
+        height: auto;
+        transition: all .65s;
+        transform: scale(0.99);
+    }
+
+    .memeBody:hover{
+        height: auto;
+        transition: all .65s;
+        transform: scale(0.99);
+    }
 }
